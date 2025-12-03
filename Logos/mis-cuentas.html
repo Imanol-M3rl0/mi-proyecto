@@ -12,38 +12,39 @@
     </header>
 
     <main>
-        <section>
-            <h1>Mis Cuentas</h1>
-            
-            <div>
-                <div>
-                    <h2>Lista de Cuentas:</h2>
-                    <div class="list-placeholder"></div>
-                    <div>
-                        <input type="text" placeholder="Cuenta">
-                        <input type="text" placeholder="Saldo">
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <p>Deposito</p>
-                        <p>Retiro</p>
-                        <input type="number" placeholder="Monto">
-                    </div>
-
-                    <p>Saldo Actual</p>
-                    <p>Transacciones</p>
-
-                    <div>
-                        <button>Agregar Cuenta</button>
-                        <button>Borrar Cuenta</button>
-                    </div>
-
-                    <a href="transacciones.html">Transacciones</a>
-                </div>
+        <section id="mis-cuentas">
+        <h1>Mis Cuentas</h1>
+        <div class="contenedor-cuentas"> 
+        
+            <div class="columna-izquierda">
+             <h2>Lista de Cuentas:</h2>
+                <div class="list-placeholder"></div>
+                <div class="entradas-cuenta-saldo">
+                <input type="text" id="cuenta-nombre" placeholder="Cuenta">
+                <input type="text" id="cuenta-saldo" placeholder="Saldo">
             </div>
-        </section>
+        </div>
+
+        <div class="columna-derecha">
+            
+            <div class="panel-deposito-retiro"> 
+                <p>Deposito</p>
+                <p>Retiro</p>
+                <input type="number" id="monto-operacion" placeholder="Monto">
+            </div>
+
+            <p>Saldo Actual</p>
+            <p>Transacciones</p>
+
+            <div class="contenedor-botones">
+                <button id="boton-agregar">Agregar Cuenta</button>
+                <button id="boton-borrar">Borrar Cuenta</button>
+            </div>
+
+            <a href="transacciones.html">Transacciones</a>
+        </div>
+    </div>
+</section>
     </main>
 
     <script src="js/scriptBancoBisa.js"></script>

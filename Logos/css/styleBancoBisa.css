@@ -1,0 +1,469 @@
+:root {
+    --color-principal: #004b90; /* Azul oscuro de BISA */
+    --color-secundario: #ffd200; /* Amarillo de BISA */
+    --color-texto-claro: white;
+    --color-texto-oscuro: #333;
+    --color-fondo-panel: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente para paneles */
+    --color-borde: #ccc;
+    --color-sidebar: #DEDEDE;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+
+
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+
+header img {
+    
+    height: 150px; 
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+header a:not([href="#"]) { 
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 1.5; 
+    font-weight: normal;
+}
+
+
+main {
+    display: flex;
+    min-height: calc(100vh - 70px); 
+    /* vh: significa "Viewport Height"
+    100vh	100% de la altura visible*/
+}
+
+.sidebar {
+    background-color: var(--color-sidebar);
+    width: 200px;
+    padding-top: 20px;
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.sidebar nav ul li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: var(--color-texto-oscuro);
+
+}
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+section {
+    flex-grow: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-principal {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    width: 90%;
+    max-width: 600px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+}
+
+
+section#inicio,section#registro,section#mis-cuentas,section#transacciones {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 40px;
+    border-radius: 0; 
+    min-height: 100%;
+}
+
+
+section#inicio > div { 
+    background-color: var(--color-fondo-panel); /* Fondo gris claro/blanco */
+    color: var(--color-texto-oscuro);
+    padding: 50px 30px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 500px; 
+    text-align: center;
+}
+
+section h1 {
+    font-size: 2.5;
+    margin-bottom: 5px;
+}
+
+section p {
+    font-size: 1.1;
+    margin-bottom: 20px;
+}
+
+
+#inicio form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#inicio label {
+    font-size: 1.2;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#inicio input[type="email"], 
+#inicio input[type="password"] {
+    border: none;
+    border-bottom: 2px solid var(--color-texto-oscuro);
+    padding: 10px 0;
+    font-size: 1.1;
+    background: transparent;
+    outline: none;
+}
+
+#inicio input {
+    width: 100%;
+    max-width: 350px; /* Para que la línea no sea exageradamente larga */
+    align-self: center;
+}
+
+
+section#registro {
+    padding: 0;
+    margin: 0;
+}
+
+section#registro h1 {
+    margin-bottom: 40px;
+    padding-top: 40px;
+    font-size: 2.8em;
+}
+
+section#registro form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear etiquetas a la izquierda */
+    width: 80%; /* Ancho del formulario dentro del panel */
+    max-width: 500px;
+}
+
+#registro form div {
+    display: flex;
+    justify-content: space-between; /* Etiqueta a la izquierda, input a la derecha */
+    width: 100%;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+#registro label {
+    font-size: 1.2;
+    font-weight: normal;
+    width: 35%; 
+    text-align: left;
+    white-space: nowrap; /* Evita que los labels se rompan */
+}
+
+#registro input {
+    width: 60%; /* Ancho para los inputs */
+    padding: 8px;
+    border: none;
+    border-radius: 0;
+    background-color: #a0a0a0; /* Color gris claro para simular el diseño */
+    height: 35px;
+}
+
+
+#mis-cuentas h1 {
+    font-size: 2.8em;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Contenedor principal de Mis Cuentas */
+#mis-cuentas > div {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+/* Panel Izquierdo: Lista de Cuentas */
+#mis-cuentas > div > div:first-child {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+#mis-cuentas h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.list-placeholder {
+    background-color: #a0a0a0;
+    height: 300px; /* Altura del recuadro de lista */
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+
+#mis-cuentas > div > div:first-child > div {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+#mis-cuentas > div > div:first-child input {
+    flex: 1;
+    padding: 8px;
+    background-color: #a0a0a0;
+    border: none;
+    text-align: center;
+}
+
+
+#mis-cuentas > div > div:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+#mis-cuentas > div > div:last-child > div:first-child {
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-texto-claro);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#mis-cuentas > div > div:last-child > div:first-child p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+#mis-cuentas > div > div:last-child > div:first-child p:nth-child(1) { grid-column: 1 / 2; }
+#mis-cuentas > div > div:last-child > div:first-child p:nth-child(2) { grid-column: 2 / 3; }
+#mis-cuentas > div > div:last-child > div:first-child input {
+    grid-column: 2 / 3; /* El input de monto debajo de Retiro */
+    grid-row: 2 / 3;
+    background-color: #a0a0a0;
+    border: none;
+    padding: 8px;
+    text-align: center;
+     color: var(--color-texto-oscuro);
+
+}
+
+#mis-cuentas p {
+    font-size: 1.3em;
+    margin: 5px 0;
+}
+
+/* Botones Agregar/Borrar Cuenta */
+#mis-cuentas > div > div:last-child > div:nth-child(4) {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    
+}
+
+#mis-cuentas button {
+    background-color: transparent;
+    color: var(--color-texto-claro);
+    border: 2px solid var(--color-texto-claro);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.1;
+    transition: background-color 0.3s;
+}
+
+#mis-cuentas button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+#mis-cuentas a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 1.3;
+    font-weight: bold;
+    align-self: center;
+}
+
+section#transacciones {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#transacciones h1 {
+    padding-top: 40px;
+    margin-bottom: 40px;
+    font-size: 2.8;
+}
+
+.transactions-list-placeholder {
+    background-color: #757474;
+    width: 90%;
+    height: 400px; /* Altura del recuadro de transacciones */
+    flex-grow: 1; 
+    
+}
+
+#transacciones + footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+#transacciones + footer a {
+    color: var(--color-fondo-panel);
+    text-decoration: none;
+    font-size: 1.5;
+    font-weight: normal;
+    color: var(--color-texto-oscuro);
+
+}
+
+
+@media (max-width: 768px) {
+    
+    .sidebar {
+        display: none; 
+    }
+
+    main {
+        flex-direction: column; /* Apilar contenido si el sidebar se mostrara */
+        min-height: auto;
+    }
+
+    header {
+        justify-content: center; /* Centrar el logo en móvil si no hay nav a la derecha */
+    }
+
+    header nav {
+        display: none; /* Ocultar "Sucursales" y "Salir" en el header móvil */
+    }
+    
+    /* El diseño móvil de la imagen 'Celular.png' usa una barra de navegación inferior */
+    body {
+        position: relative;
+        padding-bottom: 60px; /* Espacio para la barra inferior */
+    }
+
+    /* BARRA DE NAVEGACIÓN INFERIOR PARA MÓVIL */
+    .nav-movil {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-principal);
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-movil a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--color-texto-claro);
+        font-size: 0.7em;
+        padding: 5px;
+    }
+
+    /* Estilos para las páginas principales */
+    section#inicio,section#registro,section#mis-cuentas,section#transacciones {
+        padding: 20px 10px; /* Reducir padding en móvil */
+    }
+
+    /* Inicio (Login) */
+    section#inicio > div { 
+        padding: 30px 15px; /* Reducir padding del panel de login */
+    }
+    
+    /* Registro */
+    #registro form {
+        width: 100%;
+    }
+    
+    #registro form div {
+        flex-direction: column; /* Apilar etiqueta e input en móvil */
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    #registro label, #registro input {
+        width: 100%; /* Ocupar todo el ancho */
+        text-align: left;
+    }
+    
+    /* Mis Cuentas */
+    #mis-cuentas > div {
+        flex-direction: column; /* Apilar los dos paneles de cuentas */
+    }
+    
+    .list-placeholder {
+        height: 200px; /* Reducir altura de la lista */
+    }
+
+}
