@@ -1,0 +1,226 @@
+:root {
+    --color-principal: #013E7B; 
+    --color-secundario: #ffd200;
+    --color-texto-claro: white;
+    --color-texto-oscuro: #333;
+    --color-fondo-panel: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente para paneles */
+    --color-borde: #ccc;
+    --color-sidebar: #DEDEDE;
+}
+body {
+    /* Define la fuente de texto para toda la página */
+    font-family: Arial, sans-serif;
+    /* Color de fondo de la página, un azul muy claro/gris */
+    background-color: var(--color-fondo-panel); 
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    /* Centra el contenido principal en la página */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* --- Estilos del Encabezado --- */
+header {
+    /* Fondo amarillo similar al del banner principal */
+    background-color: var(--color-principal); 
+    padding: 15px 0;
+    /* Centra el logo horizontalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    /* Ajusta el tamaño del logo */
+    height: 105px; 
+    width: auto;
+}
+
+/* --- Estilos de la Sección Mis Cuentas --- */
+#mis-cuentas h1 {
+    /* Color de título */
+    color: var(--color-principal); 
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.contenedor-cuentas {
+    /* Usa Flexbox para dividir el espacio en dos columnas */
+    display: flex;
+    /* Envuelve los elementos si no hay suficiente espacio (útil para móviles) */
+    flex-wrap: wrap; 
+    gap: 30px;
+    padding: 20px;
+    background-color: #fff;
+    /* Borde redondeado suave */
+    border-radius: 8px; 
+    /* Sombra para que se vea como un panel */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+}
+
+/* Columna Izquierda (Lista de Cuentas) y Derecha (Operaciones) */
+.columna-izquierda, .columna-derecha {
+    /* Hace que cada columna ocupe el espacio disponible (aproximadamente 50% cada una) */
+    flex: 1; 
+    min-width: 300px; /* Asegura que no se hagan demasiado pequeñas */
+    padding: 15px;
+    /* Línea divisoria suave */
+    border: 1px solid #ddd; 
+    border-radius: 6px;
+    background-color: var(--color-fondo-panel);
+}
+
+.columna-izquierda h2 {
+    color: #333;
+    border-bottom: 2px solid #ffc72c; /* Línea decorativa amarilla */
+    padding-bottom: 5px;
+}
+
+/* --- Estilos para las Cuentas y Saldos --- */
+.list-placeholder {
+    /* Simula un área donde irán las cuentas */
+    background-color: var(--color-fondo-panel);
+    border: 1px solid var(--color-borde);
+    height: 150px; 
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: auto; 
+}
+
+.entradas-cuenta-saldo input[type="text"] {
+    /* Estilo para los campos de Cuenta y Saldo */
+    width: calc(50% - 5px); 
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    /* Fondo más oscuro para indicar que son solo lectura */
+    background-color: var(--color-fondo-panel); 
+    color:var(--color-texto-oscuro);
+    /* Ajusta el espaciado entre los inputs */
+    display: inline-block; 
+}
+
+/* --- Estilos para Depósito/Retiro y Monto --- */
+.panel-deposito-retiro {
+    /* Usa Flexbox para alinear Depósito y Retiro */
+    display: flex; 
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.panel-deposito-retiro p {
+    /* Estilo de los textos "Deposito" y "Retiro" */
+    background-color: var(--color-texto-claro);
+    color: var(--color-texto-claro);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.panel-deposito-retiro p:hover {
+    background-color: var(--color-principal);
+}
+
+#monto-operacion {
+    /* Estilo para el campo de Monto */
+    flex: 1; 
+    padding: 10px;
+    border: 2px solid var(--color-secundario); /* Borde resaltado */
+    border-radius: 4px;
+    text-align: right;
+    font-size: 16px;
+}
+
+.columna-derecha p {
+    /* Estilo para Saldo Actual y Transacciones */
+    margin: 10px 0;
+    font-size: 18px;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+/* --- Estilos de Botones y Enlaces --- */
+.contenedor-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#boton-agregar, #boton-borrar {
+    /* Estilo base para los botones */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-texto-claro);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+    transition: background-color 0.3s;
+}
+
+#boton-agregar {
+    /* Botón principal, color azul */
+    background-color: var(--color-principal); 
+}
+
+#boton-agregar:hover {
+    background-color: rgb(5, 116, 138);
+}
+
+#boton-borrar {
+    /* Botón secundario, color que contraste */
+    background-color: #cc0000; 
+}
+
+#boton-borrar:hover {
+    background-color: #990000;
+}
+
+a[href="transacciones.html"] {
+    /* Estilo para el enlace */
+    display: block;
+    text-align: center;
+    color: #004d99;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a[href="transacciones.html"]:hover {
+    background-color: var(--color-principal);
+    color: white;
+}
+.entrada-cuenta {
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.entrada-cuenta:hover {
+    background-color: #e6f7ff; /* Azul claro al pasar el mouse */
+}
+
+.entrada-cuenta.seleccionada {
+    /* Estilo de la cuenta activa */
+    border: 1px solid var(--color-principal); 
+    background-color: #d9edf7; /* Fondo para cuenta activa */
+    font-weight: bold;
+}

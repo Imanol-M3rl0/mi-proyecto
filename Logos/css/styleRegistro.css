@@ -1,0 +1,102 @@
+:root {
+    --color-principal: #013E7B;      
+    --color-secundario: #FFD200;    
+    --color-texto-claro: white;
+    --color-texto-oscuro: #333;
+    --color-fondo-panel: rgba(255, 255, 255, 0.95);
+    --color-borde: #ccc;
+}
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* explicar */
+    align-items: center;
+    min-height: 70px;
+}
+
+
+
+section #registro {
+    background-color: beige; 
+    color: var(--color-texto-claro);
+    padding: 40px;
+    min-height: 100vh; 
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+section#registro h1 {
+    font-size: 2.5em;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+section#registro form {
+    /* Aquí usamos un panel blanco/claro similar al Login para agrupar los campos */
+    background-color: var(--color-fondo-panel);
+    color: var(--color-texto-oscuro);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%; 
+    max-width: 650px; /* Un poco más ancho que el Login para campos */
+    margin: 0 auto;
+}
+
+/* Estilo para cada línea de campo (label e input) */
+#registro form div {
+    display: flex;
+    justify-content: space-between; /* Etiqueta a la izquierda, input a la derecha */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-borde); /* Separador suave entre campos */
+    padding-bottom: 10px;
+}
+
+#registro label {
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 40%; /* Dejar espacio para la etiqueta */
+    text-align: right; /* Alinear etiquetas a la derecha */
+    padding-right: 20px;
+    white-space: nowrap;
+}
+
+#registro input {
+    width: 60%; /* Dejar espacio para el input */
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-texto-claro); /* Fondo blanco para el input */
+    color: var(--color-texto-oscuro);
+    font-size: 1em;
+    transition: border 0.3s;
+}
+
+#registro input:focus {
+    border: 1px solid var(--color-secundario); /* Borde amarillo al hacer foco */
+    outline: none;
+}
+
+/* Estilo para el botón de "Registrarse" */
+.btn-registro {
+    background-color: var(--color-secundario); /* Amarillo BISA */
+    color: var(--color-texto-oscuro);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-registro:hover {
+    background-color: #ffc200; 
+}

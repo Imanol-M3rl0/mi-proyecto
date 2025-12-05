@@ -1,0 +1,130 @@
+:root {
+    --color-bisa: #013E7B; 
+    --color-bisa-claro: #00A9E0; 
+    --color-blanco: #FFFFFF;
+    --color-gris-claro: #F5F5F5;
+    --color-rojo-btn: #E3001C; /* Un color para destacar el botón CTA */
+    --fuente-principal: 'Poppins', sans-serif; /* Fuente de la letra */
+}
+
+*  /* EXPLICAXION */{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Facilita el manejo de padding y bordes */   /* EXPLICAXION */
+}
+
+body {
+    background-color: var(--color-gris-claro); 
+    font-family: var(--fuente-principal);
+    color: #333; 
+    line-height: 1.6; /* EXPLICAXION */
+}
+
+header {
+    background-color: var(--color-bisa);
+    padding: 15px 0; 
+    display: flex;  /* EXPLICAXION */
+}
+
+.logo-container {
+    max-width: 1200px;  /* EXPLICAXION */
+    width: 90%;
+}
+
+header h1 img {
+    height: 100; 
+}
+
+.hero-section {
+    min-height: 60vh;   /* EXPLICAXION */
+    display: flex; 
+    justify-content: center;
+    align-items: center; /* EXPLICAXION */
+    text-align: center; /* EXPLICAXION */
+    background: var(--color-blanco); /* Fondo del hero */
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 10px; 
+    max-width: 800px; 
+    margin-left: auto; /* EXPLICAXION */
+    margin-right: auto;
+}
+
+.hero-content {
+    max-width: 600px; /* EXPLICAXION */
+}
+
+.bienvenida {
+    font-size: 1.2rem;    /* EXPLICAXION */
+    color: var(--color-bisa-claro);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-bisa);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.inicio{
+    display: inline-block;     /* EXPLICAXION */
+    background-color: var(--color-rojo-btn); 
+    color: var(--color-blanco);
+    text-decoration: none; /* Quitar el subrayado por defecto */
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px; /* EXPLICAXION */  /* Animación suave para el hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* EXPLICAXION */  /* Sombra para que parezca un botón real */
+}
+
+.Registrarse{
+     display: inline-block;     /* EXPLICAXION */
+    background-color: var(--color-rojo-btn); 
+    color: var(--color-blanco);
+    text-decoration: none; /* Quitar el subrayado por defecto */
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px; /* EXPLICAXION */  /* Animación suave para el hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* EXPLICAXION */  /* Sombra para que parezca un botón real */
+
+}
+
+.inicio:hover {
+    background-color: #A9001C; /* Un rojo un poco más oscuro */
+    /* Ligero movimiento para feedback visual */
+    transform: translateY(-2px); /* EXPLICAXION */
+}
+.Registrarse:hover{
+     background-color: #A9001C; /* Un rojo un poco más oscuro */ 
+    /* Ligero movimiento para feedback visual */
+    transform: translateY(-2px); /* EXPLICAXION */
+
+}
+
+@media (max-width: 600px) {
+    .hero-content h2 {
+        font-size: 2rem; /* Reduce el tamaño del título en móviles */
+    }
+
+    .inicio {
+        width: 90%; /* Hace que el botón ocupe casi todo el ancho */
+        padding: 12px 20px;
+    }
+
+    .hero-section {
+        margin: 10px;
+    }
+}

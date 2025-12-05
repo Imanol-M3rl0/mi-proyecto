@@ -3,38 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco BISA - Inicio</title>
-<link rel="stylesheet" href="css/styleBancoBisa.css">
+<title>Banco BISA - Login</title>
+ <link rel="stylesheet" href="css/styleInicio.css">
 </head>
 <body>
-        <header>
-          <img src="banco bisa logo.png" alt="Logo de Banco Bisa">
-            <nav>
-                <ul>
-                 <li><a href="#">Sucursales</a></li>
-                 <li><a href="#">Salir</a></li>
-                </ul>
-            </nav>
-        </header>
-
+   <header>
+    <img src="banco bisa logo.png" alt="Logo de Banco Bisa">
+    
+    <button class="menu-toggle" id="menu-toggle">☰</button> 
+    
+    <nav class="nav-desktop"> <ul>
+            <li><a href="sucursales.html">Sucursales</a></li>
+            <li><a href="salir.html">Salir</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="registro.html">Registrarse</a></li>
-                    <li><a href="mis-cuentas.html">Mis Cuentas</a></li>
-                    <li><a href="transacciones.html">Transacciones</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="mis-cuentas.html">Mis Cuentas</a></li>
+                <li><a href="transacciones.html">Transacciones</a></li>
+            </ul>
+        </nav>
+    </aside>
 
         <section id="inicio"> 
             <div>
                 <h1>Bienvenido/a</h1>
                 <p>Ingrese sus datos</p>
-                <form>
-                    <div>
+                
+                <form action="mis-cuentas.html" method="GET"> 
+                <div>
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required placeholder="ingrese su email">
                     </div>
@@ -42,7 +44,12 @@
                         <label for="password">Contraseña:</label>
                         <input type="password" id="contrasena" name="contrasena" required placeholder="ingrese su Contraseña">
                     </div>
+                    
+                    <button type="submit" class="btn-login">INGRESAR</button>
+                    
                 </form>
+
+                
             </div>
         </section>
     </main>
@@ -53,6 +60,6 @@
         <a href="transacciones.html">Transacciones</a>
     </div>
 
-    <script src="js/scriptBancoBisa.js"></script>
+    <script src="js/scriptInicio.js"></script>
 </body>
 </html>

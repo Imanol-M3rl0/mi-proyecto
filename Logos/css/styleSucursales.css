@@ -1,0 +1,16 @@
+.imagen{
+  height: 600px;
+    width: 600px;
+   
+
+}
+body{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(1, 49, 117);
+}
+.volver{
+    font-size: 20;
+    font-weight: 100;
+    color: beige;
+}

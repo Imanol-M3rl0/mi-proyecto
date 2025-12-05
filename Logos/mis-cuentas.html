@@ -4,49 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco BISA - Mis Cuentas</title>
-    <link rel="stylesheet" href="css/styleBancoBisa.css">
+    <link rel="stylesheet" href="css/styleMisCuentas.css">
 </head>
 <body>
+    
     <header>
-        <img src="banco bisa logo.png" alt="Logo de Bnaco Bisa">
+        <img src="banco bisa logo.png" alt="Logo de Banco Bisa">
+        
     </header>
-
     <main>
         <section id="mis-cuentas">
-        <h1>Mis Cuentas</h1>
-        <div class="contenedor-cuentas"> 
-        
-            <div class="columna-izquierda">
-             <h2>Lista de Cuentas:</h2>
-                <div class="list-placeholder"></div>
-                <div class="entradas-cuenta-saldo">
-                <input type="text" id="cuenta-nombre" placeholder="Cuenta">
-                <input type="text" id="cuenta-saldo" placeholder="Saldo">
+            <h1>Mis Cuentas</h1>
+            <div class="contenedor-cuentas"> 
+                
+                <div class="columna-izquierda">
+                    <h2>Lista de Cuentas:</h2>
+                    <div class="list-placeholder">
+                        </div>
+                    <div class="entradas-cuenta-saldo">
+                        <input type="text" id="cuenta-nombre" placeholder="Cuenta" readonly>
+                        <input type="text" id="cuenta-saldo" placeholder="Saldo" readonly>
+                    </div>
+                </div>
+
+                <div class="columna-derecha">
+                    
+                    <div class="panel-deposito-retiro"> 
+                        <p>Deposito</p>
+                        <p>Retiro</p>
+                        <input type="number" id="monto-operacion" placeholder="Monto">
+                    </div>
+
+                    <p>Saldo Actual</p>
+
+                    <div class="contenedor-botones">
+                        <button id="boton-agregar">Agregar Cuenta</button>
+                        <button id="boton-borrar">Borrar Cuenta</button>
+                    </div>
+
+                    <a href="transacciones.html">Ir a Transacciones</a>
+                </div>
             </div>
-        </div>
-
-        <div class="columna-derecha">
-            
-            <div class="panel-deposito-retiro"> 
-                <p>Deposito</p>
-                <p>Retiro</p>
-                <input type="number" id="monto-operacion" placeholder="Monto">
-            </div>
-
-            <p>Saldo Actual</p>
-            <p>Transacciones</p>
-
-            <div class="contenedor-botones">
-                <button id="boton-agregar">Agregar Cuenta</button>
-                <button id="boton-borrar">Borrar Cuenta</button>
-            </div>
-
-            <a href="transacciones.html">Transacciones</a>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
-    <script src="js/scriptBancoBisa.js"></script>
+    <script src="js/scriptMisCuentas.js"></script>
 </body>
 </html>
