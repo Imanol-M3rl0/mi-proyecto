@@ -1,27 +1,18 @@
-// =========================================================
-// Variables y Configuración Inicial
-// =========================================================
 
-// Estructura de datos para simular cuentas (se carga al iniciar)
 let cuentas = [
     { id: 1, nombre: "Cuenta Ahorro BISA", saldo: 1500.50 },
     { id: 2, nombre: "Cuenta Corriente", saldo: 300.00 }
 ];
 
-// 🚨 NUEVO: Array para guardar el historial de transacciones
+// NUEVO: Array para guardar el historial de transacciones
 // Usamos localStorage para que las transacciones persistan entre páginas
 let historialTransacciones = JSON.parse(localStorage.getItem('transacciones')) || []; 
 
 let proximoId = 3; 
 let cuentaSeleccionada = null; 
 
-// =========================================================
-// Obtención de Elementos del DOM (Solo se aplica si estamos en la página de Mis Cuentas)
-// =========================================================
 
-// Usamos window.location para determinar en qué página estamos
 if (document.title === "Banco BISA - Mis Cuentas") {
-    // Si estamos en Mis Cuentas, inicializar los elementos de esa página
     const listaPlaceholder = document.querySelector('.list-placeholder');
     const botonAgregar = document.getElementById('boton-agregar');
     const botonBorrar = document.getElementById('boton-borrar');
@@ -32,47 +23,40 @@ if (document.title === "Banco BISA - Mis Cuentas") {
     const textoDeposito = panelOperacion.querySelector('p:nth-child(1)');
     const textoRetiro = panelOperacion.querySelector('p:nth-child(2)');
 
-    // Inicializar la funcionalidad de Mis Cuentas
     inicializarMisCuentas();
-} else if (document.title === "Banco BISA - Transacciones") {
-    // Si estamos en la página de Transacciones, inicializar la lista
+} 
+else if (document.title === "Banco BISA - Transacciones") {
     const transactionsListPlaceholder = document.querySelector('.transactions-list-placeholder');
     mostrarHistorial(transactionsListPlaceholder);
 }
 
 
-// =========================================================
-// Funciones de Lógica Central (Comunes a ambas páginas)
-// =========================================================
-
 /**
- * 🚨 NUEVO: Registra una transacción y la guarda en localStorage.
- * @param {string} tipo - 'deposito' o 'retiro'.
- * @param {number} monto - Monto de la operación.
- * @param {Object} cuenta - La cuenta afectada.
- * @param {number} saldoFinal - El saldo después de la operación.
+ * NUEVO: Registra una transacción y la guarda en localStorage.
+ * @param {string} tipo - 'deposito' o 'retiro'
+ * @param {number} monto - Monto de la operación
+ * @param {Object} cuenta - La cuenta afectada
+ * @param {number} saldoFinal - El saldo después de la operación
  */
 function registrarTransaccion(tipo, monto, cuenta, saldoFinal) {
     const transaccion = {
         tipo: tipo,
         monto: monto,
         cuentaNombre: cuenta.nombre,
-        hora: new Date().toLocaleTimeString('es-ES'), // Hora de la transacción
+        hora: new Date().toLocaleTimeString('es-ES'), 
         fecha: new Date().toLocaleDateString('es-ES'),
         saldoFinal: saldoFinal
     };
     
     historialTransacciones.push(transaccion);
-    // Guardar el array actualizado en el almacenamiento local
     localStorage.setItem('transacciones', JSON.stringify(historialTransacciones));
 }
 
 /**
- * Realiza una operación de depósito o retiro. (MODIFICADA para registrar)
+ * 
  * @param {string} tipo - 'deposito' o 'retiro'.
  */
 function realizarOperacion(tipo) {
-    // ... (El código de validación de monto y cuenta es el mismo) ...
 
     if (!cuentaSeleccionada) {
         alert("¡Error! Debes seleccionar una cuenta primero.");
@@ -101,7 +85,6 @@ function realizarOperacion(tipo) {
         }
     }
     
-    // 🚨 REGISTRO DE TRANSACCIÓN DESPUÉS DE LA OPERACIÓN
     registrarTransaccion(tipo, monto, cuentas[indice], cuentas[indice].saldo);
     
     cuentaSeleccionada = cuentas[indice]; 
@@ -111,7 +94,6 @@ function realizarOperacion(tipo) {
 
 
 /**
- * 🚨 NUEVO: Dibuja el historial de transacciones en la página de Transacciones.
  * @param {HTMLElement} contenedor - El placeholder donde se mostrará la lista.
  */
 function mostrarHistorial(contenedor) {
@@ -120,10 +102,9 @@ function mostrarHistorial(contenedor) {
         return;
     }
 
-    // Recorrer el historial y crear el HTML para cada transacción
-    historialTransacciones.reverse().forEach(t => { // Revertir para mostrar lo más reciente primero
+    historialTransacciones.reverse().forEach(t => { 
         const item = document.createElement('div');
-        item.classList.add('transaction-item', t.tipo); // Añade clase 'deposito' o 'retiro'
+        item.classList.add('transaction-item', t.tipo); 
 
         item.innerHTML = `
             <span class="transaction-type">
@@ -144,12 +125,10 @@ function mostrarHistorial(contenedor) {
 }
 
 
-// =========================================================
-// Inicialización de la Página "Mis Cuentas"
-// =========================================================
+
 
 function inicializarMisCuentas() {
-    // ... (el resto de las funciones de Mis Cuentas) ...
+
     function renderizarCuentas() {
         listaPlaceholder.innerHTML = ''; 
     
@@ -177,9 +156,7 @@ function inicializarMisCuentas() {
         renderizarCuentas(); 
     }
 
-    // Asignación de Eventos
     botonAgregar.addEventListener('click', () => {
-        // ... (Lógica de Agregar Cuenta) ...
         const nombreCuenta = prompt("Ingresa el nombre de la nueva cuenta:");
         if (!nombreCuenta) return;
 
@@ -204,7 +181,6 @@ function inicializarMisCuentas() {
     });
     
     botonBorrar.addEventListener('click', () => {
-        // ... (Lógica de Borrar Cuenta) ...
         if (!cuentaSeleccionada) {
             alert("¡Error! Selecciona la cuenta que deseas borrar.");
             return;
@@ -213,7 +189,7 @@ function inicializarMisCuentas() {
         const confirmar = confirm(`¿Estás seguro de borrar la cuenta "${cuentaSeleccionada.nombre}"?`);
         if (confirmar) {
             cuentas = cuentas.filter(c => c.id !== cuentaSeleccionada.id);
-            alert(`Cuenta "${cuentaSeleccionada.nombre}" eliminada.`);
+            alert(`Cuenta "${cuentaSeleccionada.nombre}" eliminada`);
             
             cuentaSeleccionada = null;
             cuentaNombreInput.value = '';
@@ -226,6 +202,5 @@ function inicializarMisCuentas() {
     textoDeposito.addEventListener('click', () => realizarOperacion('deposito'));
     textoRetiro.addEventListener('click', () => realizarOperacion('retiro'));
 
-    // Inicialización
     renderizarCuentas();
 }

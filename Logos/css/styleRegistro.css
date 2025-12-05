@@ -11,7 +11,7 @@ header {
     color: var(--color-texto-claro);
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* explicar */
+    justify-content: space-between;  /* distribuye los ítems flexibles uniformemente */
     align-items: center;
     min-height: 70px;
 }
@@ -35,35 +35,33 @@ section#registro h1 {
 }
 
 section#registro form {
-    /* Aquí usamos un panel blanco/claro similar al Login para agrupar los campos */
     background-color: var(--color-fondo-panel);
     color: var(--color-texto-oscuro);
     padding: 40px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 90%; 
-    max-width: 650px; /* Un poco más ancho que el Login para campos */
+    max-width: 650px;  
     margin: 0 auto;
 }
 
-/* Estilo para cada línea de campo (label e input) */
 #registro form div {
     display: flex;
-    justify-content: space-between; /* Etiqueta a la izquierda, input a la derecha */
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--color-borde); /* Separador suave entre campos */
+    border-bottom: 1px solid var(--color-borde); 
     padding-bottom: 10px;
 }
 
 #registro label {
     font-size: 1.1em;
     font-weight: bold;
-    width: 40%; /* Dejar espacio para la etiqueta */
-    text-align: right; /* Alinear etiquetas a la derecha */
+    width: 40%; 
+    text-align: right; 
     padding-right: 20px;
-    white-space: nowrap;
+    white-space: nowrap; /* determina cómo los espacios, tabulaciones y saltos de línea dentro del código HTML */
 }
 
 #registro input {
@@ -71,20 +69,19 @@ section#registro form {
     padding: 8px 10px;
     border: none;
     border-radius: 4px;
-    background-color: var(--color-texto-claro); /* Fondo blanco para el input */
+    background-color: var(--color-texto-claro); 
     color: var(--color-texto-oscuro);
     font-size: 1em;
     transition: border 0.3s;
 }
 
 #registro input:focus {
-    border: 1px solid var(--color-secundario); /* Borde amarillo al hacer foco */
+    border: 1px solid var(--color-secundario); 
     outline: none;
 }
 
-/* Estilo para el botón de "Registrarse" */
 .btn-registro {
-    background-color: var(--color-secundario); /* Amarillo BISA */
+    background-color: var(--color-secundario);
     color: var(--color-texto-oscuro);
     border: none;
     padding: 12px 25px;

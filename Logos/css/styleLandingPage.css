@@ -7,27 +7,28 @@
     --fuente-principal: 'Poppins', sans-serif; /* Fuente de la letra */
 }
 
-*  /* EXPLICAXION */{ 
+*  { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Facilita el manejo de padding y bordes */   /* EXPLICAXION */
+    box-sizing: border-box; /* cambia  como se calcula el ancho y el alto de tus elementos HTML */
 }
 
 body {
     background-color: var(--color-gris-claro); 
     font-family: var(--fuente-principal);
     color: #333; 
-    line-height: 1.6; /* EXPLICAXION */
+    line-height: 1.6; /* altura de cada línea de texto */
 }
 
 header {
     background-color: var(--color-bisa);
     padding: 15px 0; 
-    display: flex;  /* EXPLICAXION */
+    display: flex;  /* Módulo de Caja Flexible,
+     proporciona una forma eficiente de diseñar, alinear y distribuir el espacio entre los ítems en un contenedor, */
 }
 
 .logo-container {
-    max-width: 1200px;  /* EXPLICAXION */
+    max-width: 1200px;  /* ancho máximo */
     width: 90%;
 }
 
@@ -36,26 +37,29 @@ header h1 img {
 }
 
 .hero-section {
-    min-height: 60vh;   /* EXPLICAXION */
+    min-height: 60vh;   /* altura mínima que debe tener un elemento,
+    El valor 60vh utiliza una unidad de medida relativa llamada "Viewport Height" (Altura de la Ventana Gráfica). */
+    
     display: flex; 
     justify-content: center;
-    align-items: center; /* EXPLICAXION */
-    text-align: center; /* EXPLICAXION */
+    align-items: center; 
+    text-align: center; 
     background: var(--color-blanco); /* Fondo del hero */
     padding: 40px 20px;
     margin-top: 20px;
     border-radius: 10px; 
     max-width: 800px; 
-    margin-left: auto; /* EXPLICAXION */
+    margin-left: auto; /* navegador asigna la misma cantidad de espacio libre disponible a ambos lados */
     margin-right: auto;
 }
 
 .hero-content {
-    max-width: 600px; /* EXPLICAXION */
+    max-width: 600px; 
 }
 
 .bienvenida {
-    font-size: 1.2rem;    /* EXPLICAXION */
+    font-size: 1.2rem;    /* que significa Root Em, rem es una unidad de longitud relativa en CSS
+    establece el tamaño de la fuente de un elemento a 1.2 veces el tamaño de la fuente raíz (root) del documento. */
     color: var(--color-bisa-claro);
     font-weight: 600;
     margin-bottom: 10px;
@@ -76,7 +80,8 @@ header h1 img {
 }
 
 .inicio{
-    display: inline-block;     /* EXPLICAXION */
+    display: inline-block;     /* permite poner elementos uno al lado del otro (inline), 
+    pero con la capacidad de definir su tamaño y margen vertical (block) */
     background-color: var(--color-rojo-btn); 
     color: var(--color-blanco);
     text-decoration: none; /* Quitar el subrayado por defecto */
@@ -84,12 +89,13 @@ header h1 img {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 1px; /* EXPLICAXION */  /* Animación suave para el hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* EXPLICAXION */  /* Sombra para que parezca un botón real */
+    letter-spacing: 1px;  /* espacio adicional que se agrega entre cada carácter (letra, número o símbolo) dentro del texto de un elemento. */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Aplica la transición a la propiedad del color de fondo,
+     Aplica la transición a la propiedad transform (usada para mover, escalar o rotar elementos) */  
 }
 
 .Registrarse{
-     display: inline-block;     /* EXPLICAXION */
+     display: inline-block;     
     background-color: var(--color-rojo-btn); 
     color: var(--color-blanco);
     text-decoration: none; /* Quitar el subrayado por defecto */

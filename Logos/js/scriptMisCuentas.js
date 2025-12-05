@@ -1,22 +1,13 @@
-// =========================================================
-// Variables y Configuración Inicial
-// =========================================================
 
-// Estructura de datos para simular cuentas (se carga al iniciar)
 let cuentas = [
     { id: 1, nombre: "Cuenta Ahorro BISA", saldo: 1500.50 },
     { id: 2, nombre: "Cuenta Corriente", saldo: 300.00 }
 ];
 
-// Contador para asignar IDs únicos a las nuevas cuentas
-let proximoId = 3; 
+let proximoId = 3; /* comienza en 3, porque ya hay cuenta 1 y 2 */ 
 
-// Almacena el objeto de la cuenta actualmente seleccionada por el usuario
 let cuentaSeleccionada = null; 
 
-// =========================================================
-// Obtención de Elementos del DOM
-// =========================================================
 const listaPlaceholder = document.querySelector('.list-placeholder');
 const botonAgregar = document.getElementById('boton-agregar');
 const botonBorrar = document.getElementById('boton-borrar');
@@ -26,18 +17,12 @@ const cuentaSaldoInput = document.getElementById('cuenta-saldo');
 
 const montoOperacionInput = document.getElementById('monto-operacion');
 
-// Elementos de operación (para manejar Depósito/Retiro)
 const panelOperacion = document.querySelector('.panel-deposito-retiro');
-const textoDeposito = panelOperacion.querySelector('p:nth-child(1)'); // Primer <p> es Deposito
-const textoRetiro = panelOperacion.querySelector('p:nth-child(2)');  // Segundo <p> es Retiro
+const textoDeposito = panelOperacion.querySelector('p:nth-child(1)'); 
+const textoRetiro = panelOperacion.querySelector('p:nth-child(2)');  
 
-// =========================================================
-// Funciones de Lógica Central
-// =========================================================
 
-/**
- * Muestra las cuentas en la lista lateral y les añade el evento click.
- */
+
 function renderizarCuentas() {
     listaPlaceholder.innerHTML = ''; // Limpia el contenedor
 
@@ -46,12 +31,10 @@ function renderizarCuentas() {
         elementoCuenta.classList.add('entrada-cuenta');
         elementoCuenta.textContent = `${cuenta.nombre} ($${cuenta.saldo.toFixed(2)})`;
         
-        // Resaltar la cuenta si está seleccionada
         if (cuentaSeleccionada && cuenta.id === cuentaSeleccionada.id) {
             elementoCuenta.classList.add('seleccionada');
         }
 
-        // 1. Evento para SELECCIONAR la cuenta
         elementoCuenta.addEventListener('click', () => {
             seleccionarCuenta(cuenta);
         });
@@ -62,22 +45,20 @@ function renderizarCuentas() {
 
 /**
  * Establece la cuenta activa y actualiza los campos de saldo y nombre.
- * @param {Object} cuenta - La cuenta seleccionada.
+ * @param {Object} cuenta 
  */
 function seleccionarCuenta(cuenta) {
     cuentaSeleccionada = cuenta;
     
-    // 1. Actualiza los inputs de solo lectura
     cuentaNombreInput.value = cuenta.nombre;
     cuentaSaldoInput.value = `$${cuenta.saldo.toFixed(2)}`;
 
-    // 2. Vuelve a renderizar para aplicar el estilo 'seleccionada'
     renderizarCuentas(); 
 }
 
 /**
  * Realiza una operación de depósito o retiro.
- * @param {string} tipo - 'deposito' o 'retiro'.
+ * @param {string} tipo 
  */
 function realizarOperacion(tipo) {
     if (!cuentaSeleccionada) {
@@ -96,33 +77,28 @@ function realizarOperacion(tipo) {
 
     if (tipo === 'deposito') {
         cuentas[indice].saldo += monto;
-        alert(`Depósito de $${monto.toFixed(2)} realizado.`);
+        alert(`Depósito de $${monto.toFixed(2)} realizado`);
     } else if (tipo === 'retiro') {
         if (cuentas[indice].saldo >= monto) {
             cuentas[indice].saldo -= monto;
             alert(`Retiro de $${monto.toFixed(2)} realizado.`);
         } else {
-            alert("¡Error! Saldo insuficiente para realizar el retiro.");
-            return; // Detiene la función sin actualizar
+            alert("Error! Saldo insuficiente para realizar el retiro");
+            return; 
         }
     }
     
-    // Actualiza la cuenta seleccionada con el nuevo saldo (por referencia)
     cuentaSeleccionada = cuentas[indice]; 
     
-    // Limpia el monto y actualiza la vista
     montoOperacionInput.value = '';
     seleccionarCuenta(cuentaSeleccionada);
 }
 
-// =========================================================
-// Asignación de Eventos (Listeners)
-// =========================================================
 
-// 1. Botón AGREGAR CUENTA
+
 botonAgregar.addEventListener('click', () => {
     const nombreCuenta = prompt("Ingresa el nombre de la nueva cuenta:");
-    if (!nombreCuenta) return; // Si el usuario cancela o no ingresa nombre
+    if (!nombreCuenta) return; 
 
     let saldoInicial;
     while(true) {
@@ -140,25 +116,22 @@ botonAgregar.addEventListener('click', () => {
     
     cuentas.push(nuevaCuenta);
     renderizarCuentas();
-    seleccionarCuenta(nuevaCuenta); // Selecciona la nueva cuenta automáticamente
-    alert(`Cuenta "${nombreCuenta}" agregada con éxito.`);
+    seleccionarCuenta(nuevaCuenta); 
+    alert(`Cuenta "${nombreCuenta}" agregada con éxito`);
 });
 
-// 2. Botón BORRAR CUENTA
 botonBorrar.addEventListener('click', () => {
     if (!cuentaSeleccionada) {
-        alert("¡Error! Selecciona la cuenta que deseas borrar.");
+        alert("Error! Selecciona la cuenta que deseas borrar");
         return;
     }
 
-    const confirmar = confirm(`¿Estás seguro de borrar la cuenta "${cuentaSeleccionada.nombre}"?`);
+    const confirmar = confirm(`Estás seguro de borrar la cuenta "${cuentaSeleccionada.nombre}"?`);
     if (confirmar) {
-        // Filtra el array, manteniendo solo las cuentas con un ID diferente al de la seleccionada
         cuentas = cuentas.filter(c => c.id !== cuentaSeleccionada.id);
         
-        alert(`Cuenta "${cuentaSeleccionada.nombre}" eliminada.`);
+        alert(`Cuenta "${cuentaSeleccionada.nombre}" eliminada`);
         
-        // Limpia la selección y los inputs
         cuentaSeleccionada = null;
         cuentaNombreInput.value = '';
         cuentaSaldoInput.value = '';
@@ -167,14 +140,9 @@ botonBorrar.addEventListener('click', () => {
     }
 });
 
-// 3. Botones DEPÓSITO y RETIRO
 textoDeposito.addEventListener('click', () => realizarOperacion('deposito'));
 textoRetiro.addEventListener('click', () => realizarOperacion('retiro'));
 
 
-// =========================================================
-// Inicialización
-// =========================================================
 
-// Al cargar la página, dibuja la lista de cuentas inicial
 renderizarCuentas();
