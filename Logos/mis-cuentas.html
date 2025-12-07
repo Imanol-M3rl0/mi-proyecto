@@ -4,45 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco BISA - Mis Cuentas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styleMisCuentas.css">
 </head>
 <body>
     
     <header>
         <img src="banco bisa logo.png" alt="Logo de Banco Bisa">
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button> 
         
+        <nav class="nav-desktop"> 
+            <ul>
+                <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
+                <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
+                <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                    <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                    <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
+                    <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
+                    <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
         <section id="mis-cuentas">
             <h1>Mis Cuentas</h1>
             <div class="contenedor-cuentas"> 
-                
                 <div class="columna-izquierda">
-                    <h2>Lista de Cuentas:</h2>
-                    <div class="list-placeholder">
-                        </div>
+                    <h2><i class="fas fa-list-ul"></i> Lista de Cuentas</h2>
+                    <div class="list-placeholder"></div>
                     <div class="entradas-cuenta-saldo">
-                        <input type="text" id="cuenta-nombre" placeholder="Cuenta" readonly>
+                        <input type="text" id="cuenta-nombre" placeholder="Nombre" readonly>
                         <input type="text" id="cuenta-saldo" placeholder="Saldo" readonly>
                     </div>
                 </div>
 
                 <div class="columna-derecha">
-                    
-                    <div class="panel-deposito-retiro"> 
-                        <p>Deposito</p>
-                        <p>Retiro</p>
-                        <input type="number" id="monto-operacion" placeholder="Monto">
+                    <div class="card-operaciones">
+                        <h3>Gestión de Dinero</h3>
+                        <div class="panel-deposito-retiro"> 
+                            <p class="btn-op deposito"><i class="fas fa-arrow-down"></i> Depósito</p>
+                            <p class="btn-op retiro"><i class="fas fa-arrow-up"></i> Retiro</p>
+                        </div>
+                        <div class="input-monto">
+                            <label>Monto a operar (Bs.)</label>
+                            <input type="number" id="monto-operacion" placeholder="0.00">
+                        </div>
                     </div>
-
-                    <p>Saldo Actual</p>
 
                     <div class="contenedor-botones">
-                        <button id="boton-agregar">Agregar Cuenta</button>
-                        <button id="boton-borrar">Borrar Cuenta</button>
+                        <button id="boton-agregar"><i class="fas fa-plus"></i> Nueva Cuenta</button>
+                        <button id="boton-borrar"><i class="fas fa-trash"></i> Eliminar</button>
                     </div>
 
-                    <a href="transacciones.html">Ir a Transacciones</a>
+                    <a href="transacciones.html" class="link-trans">Ver Historial de Transacciones <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </section>

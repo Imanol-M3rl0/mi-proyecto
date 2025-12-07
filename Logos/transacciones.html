@@ -4,20 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco BISA - Transacciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styleTransacciones.css">
 </head>
 <body>
     <header class="header">
-        <img src="banco bisa logo.png" alt="Logo de Bnaco Bisa">
+        <img src="banco bisa logo.png" alt="Logo de Banco Bisa">
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i>
+    </button>
+        <nav class="nav-desktop"> 
+            <ul>
+                
+                <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
+                <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
+                <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-content">
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                    <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                    <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
+                    <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
+                    <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
         <section id="transacciones">
-            <h1>Transacciones</h1>
-            <div class="transactions-list-placeholder"></div>
+            <h1><i class="fas fa-history"></i> Historial de Transacciones</h1>
+            <div class="transactions-list-placeholder">
+                </div>
         </section>
+        
         <footer>
-             <a href="mis-cuentas.html">Volver</a>
+             <a href="mis-cuentas.html"><i class="fas fa-arrow-left"></i> Volver a Mis Cuentas</a>
         </footer>
     </main>
 

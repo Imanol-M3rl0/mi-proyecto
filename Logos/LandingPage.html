@@ -4,26 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - Banco BISA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- CDN para conseguir
+    una libreria tipografica y la segunda para iconos -->
     <link rel="stylesheet" href="css/styleLandingPage.css"> 
 </head>
 <body>
     <header>
-        <div class="logo-container">
+        <nav class="logo-container">
             <h1><img src="Logo Bisa Fondo.jpeg" alt="Logo de Banco BISA"></h1>
-        </div>
+            <div class="menu-placeholder"><b>¡Tu banco de confianza!</b></div>
+        </nav>
     </header>
 
     <main class="hero-section">
         <div class="hero-content">
             <p class="bienvenida">¡Bienvenido a la Experiencia BISA!</p>
-            <h2>Tu Futuro Financiero AHORA</h2>
+            <h2>Tu Futuro Financiero <span class="destaque">AHORA</span></h2>
+            <p class="subtitulo">Abre tu Cuenta de Ahorro Digital en minutos
+                <br> Sin filas, sin complicaciones y con total seguridad</p>
             
-            <p class="subtitulo">Abre tu Cuenta de Ahorro Digital en minutos. Sin filas, sin complicaciones</p>
-            
-            <a href="BancoBisaInicio.html" class="inicio">Abrir Mi Cuenta </a>
-            <a href="registro.html" class="Registrarse"> Registrarse</a>
+            <div class="cta-container">
+                <a href="BancoBisaInicio.html" class="inicio"><i class="fas fa-plus-circle"></i> Abrir Mi Cuenta</a>
+                <a href="registro.html" class="Registrarse"><i class="fas fa-user-edit"></i> Registrarse</a>
+            </div>
         </div>
     </main>
-    
-    </body>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>100% Digital</h3>
+            <p>Todo desde tu celular.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Seguridad</h3>
+            <p>Tus ahorros protegidos.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-bolt"></i>
+            <h3>Inmediato</h3>
+            <p>Cuenta activa hoy mismo.</p>
+        </div>
+    </section>
+</body>
 </html>

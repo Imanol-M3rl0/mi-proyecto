@@ -1,273 +1,142 @@
-
 :root {
     --color-principal: #013E7B;      
     --color-secundario: #FFD200;    
     --color-texto-claro: white;
     --color-texto-oscuro: #333;
-    --color-fondo-panel: rgba(255, 255, 255, 0.95);
-    --color-borde: #ccc;
-    --color-sidebar: #acacac;       /* Gris claro para la barra lateral */
+    --color-fondo-panel: #ffffff;
 }
-
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-     background-color: beige;
+    /* Ruta de tu imagen (asegúrate de que el nombre sea exacto) */
+    background-image: url('../Bisa\ collage2.jpg'); 
+    
+    /* Hace que la imagen ocupe todo el espacio disponible */
+    background-size: cover; 
+    
+    /* Centra la imagen para que no se corte feo */
+    background-position: center; 
+    
+    /* Evita que la imagen se repita */
+    background-repeat: no-repeat; 
+    
+    /* Truco Pro: La imagen se queda fija mientras haces scroll */
+    background-attachment: fixed; 
+    
+    /* Color de respaldo por si la imagen no carga */
+    background-color: var(--color-principal); 
+    
     line-height: 1.6;
 }
 
-
 header {
     background-color: var(--color-principal);
-    color: var(--color-texto-claro);
-    padding: 10px 20px;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* explicar */
+    justify-content: space-between;
     align-items: center;
-    min-height: 70px;
+    height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header img {
-    height: 100; 
-    width: auto;
+     height: 75px; 
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-}
+/* Desktop Nav */
+.nav-desktop ul { list-style: none; display: flex; gap: 15px; }
+.nav-desktop ul li a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9em; }
 
-header nav ul li a {
-    color: var(--color-texto-claro);
-    text-decoration: none;
-    padding: 5px 10px;
-    font-weight: bold;
-    font-size: 1em; 
-}
-
- /* enlaces en el header  */
-header a:not([href="#"]) { 
-    color: var(--color-texto-claro);
-    text-decoration: none;
-    font-size: 1.5em; /* CORREGIDO: Añadir 'em' */
-    font-weight: normal;
-}
-
-
-main {
-    display: flex;
-    min-height: calc(100vh - 70px); 
-}
-
-
+/* SIDEBAR ARREGLADO */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100%;
-    
+    width: 260px;
+    height: 100vh;
     background-color: var(--color-principal); 
-    padding-top: 80px; 
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000; 
-    
+    padding-top: 90px; 
+    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+    z-index: 999; 
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar.open {
-    transform: translateX(0);
-}
+.sidebar.open { transform: translateX(0); }
 
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
+.sidebar nav ul { list-style: none; }
 .sidebar nav ul li a {
-    color: var(--color-texto-claro); 
+    color: white;
     text-decoration: none;
     display: block;
-    padding: 15px 25px;
-    font-size: 1.1em;
-    font-weight: normal;
-    transition: background-color 0.3s;
-    border-left: 5px solid transparent; 
+    padding: 18px 25px;
+    border-left: 5px solid transparent;
+    transition: 0.3s;
 }
 
-.sidebar nav ul li a:hover, .sidebar nav ul li.active a { 
-    background-color: rgba(255, 255, 255, 0.1);
-    border-left-color: var(--color-secundario); 
+.sidebar nav ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    border-left-color: var(--color-secundario);
 }
-section {
-    flex-grow: 1; 
-    padding: 20px;
+
+/* LOGIN SECTION */
+section#inicio {
+    min-height: calc(100vh - 75px);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-
-
-section #inicio {
-    background-color: var(--color-principal); 
-    color: var(--color-texto-claro);
+.login-box {
+    background: white;
     padding: 40px;
-    min-height: 100%;
-
-}
-
-section#inicio > div { 
-    background-color: var(--color-fondo-panel); 
-    color: var(--color-texto-oscuro);
-    padding: 50px 30px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    width: 100%;
-    max-width: 450px; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
     text-align: center;
 }
 
-section #inicio h1 {
-    font-size: 2.2em;
-    margin-bottom: 5px;
-    color: var(--color-principal); 
-}
+.login-box h1 { color: var(--color-principal); margin-bottom: 10px; }
 
-section#inicio p {
-    font-size: 1.1em;
-    margin-bottom: 25px;
-}
-
-
-#inicio form div {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-#inicio label {
-    font-size: 1.1em; 
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#inicio input[type="email"], #inicio input[type="password"] {
-    border: none;
-    border-bottom: 2px solid var(--color-principal); 
-    padding: 10px 0;
-    font-size: 1.1em; 
-    background: transparent;
-    outline: none;
-    transition: border-bottom-color 0.3s;
-}
-
-#inicio input:focus {
-    border-bottom-color: var(--color-secundario); 
-}
-
-#inicio input {
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label { display: block; font-weight: bold; font-size: 0.8em; margin-bottom: 5px; color: var(--color-principal); }
+.input-group input {
     width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
 }
 
 .btn-login {
-    background-color: var(--color-secundario);
+    background: var(--color-secundario);
     color: var(--color-texto-oscuro);
-    padding: 12px 25px;
-    font-size: 1.2em;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 30px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
     width: 100%;
+    transition: 0.3s;
 }
 
-.btn-login:hover {
-    background-color: #ffc200; 
-}
-
-.enlace-registro {
-    margin-top: 20px;
-    font-size: 0.9em;
-}
-
-.enlace-registro a {
-    color: var(--color-principal);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-
-section#registro, section#mis-cuentas, section#transacciones {
-    background-color: var(--color-principal);
-    color: var(--color-texto-claro);
-    padding: 40px;
-    min-height: 100%;
-}
-
-
-
-.nav-movil {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-principal);
-    display: none; /* Ocultar por defecto */
-    justify-content: space-around;
-    padding: 5px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-movil a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-texto-claro);
-    font-size: 0.7em;
-    padding: 5px;
-}
-
+.btn-login:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
 
 .menu-toggle {
-    background: none;
-    border: none;
-    color: var(--color-secundario); 
-    font-size: 2em;
-    cursor: pointer;
-    padding: 0 10px;
-    z-index: 1001;
-    display: none; 
+    display: none; /* Se activa en móvil */
+    background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block; 
-        position: absolute;
-        right: 10px;
-        top: 10px;
-    }
-    
-    header .nav-desktop {
-        display: none; 
-    }
-    
-    .nav-movil {
-        display: none; 
-    }
-
-    body {
-        padding-bottom: 0; 
-    }
+    .menu-toggle { display: block; }
+    .nav-desktop { display: none; }
 }

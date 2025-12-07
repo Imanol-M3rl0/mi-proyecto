@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => { /* asegura que el código JavaScript solo se ejecute una vez
-     que toda la estructura HTML del documento se haya cargado y parseado. */
+document.addEventListener('DOMContentLoaded', () => { /* asegura que el código JavaScript solo se ejecute una vez que toda la estructura HTML del documento se haya cargado y parseado. */
     const sidebar = document.getElementById('sidebar');
     const menuToggle = document.getElementById('menu-toggle');
 
@@ -23,7 +22,7 @@ Si la clase open SÍ está presente, la elimina (cerrando la barra) */
             const isClickOnToggle = menuToggle.contains(event.target);
             /* !isClickInsideSidebar = No hice clic dentro de la barra lateral
              !isClickOnToggle = No hice clic en el botón.
-            sidebar.classList.contains('open') = La barra lateral está abierta. */
+             sidebar.classList.contains('open') = La barra lateral está abierta. */
 
             if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');

@@ -3,134 +3,127 @@
     --color-bisa-claro: #00A9E0; 
     --color-blanco: #FFFFFF;
     --color-gris-claro: #F5F5F5;
-    --color-rojo-btn: #E3001C; /* Un color para destacar el botón CTA */
-    --fuente-principal: 'Poppins', sans-serif; /* Fuente de la letra */
+    --color-rojo-btn: #E3001C;
+    --fuente-principal: 'Poppins', sans-serif;
+    --sombra: 0 4px 15px rgba(0,0,0,0.1); /* Agregué una sombrita suave */
 }
 
-*  { 
+* { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* cambia  como se calcula el ancho y el alto de tus elementos HTML */
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--color-gris-claro); 
     font-family: var(--fuente-principal);
     color: #333; 
-    line-height: 1.6; /* altura de cada línea de texto */
+    line-height: 1.6;
 }
 
 header {
     background-color: var(--color-bisa);
-    padding: 15px 0; 
-    display: flex;  /* Módulo de Caja Flexible,
-     proporciona una forma eficiente de diseñar, alinear y distribuir el espacio entre los ítems en un contenedor, */
+    height: 96px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: var(--sombra);
 }
 
 .logo-container {
-    max-width: 1200px;  /* ancho máximo */
+    max-width: 1200px;
     width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 img {
-    height: 100; 
+.menu-placeholder {
+    color: white;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+header img {
+     height: 75px; 
 }
 
 .hero-section {
-    min-height: 60vh;   /* altura mínima que debe tener un elemento,
-    El valor 60vh utiliza una unidad de medida relativa llamada "Viewport Height" (Altura de la Ventana Gráfica). */
-    
+    min-height: 50vh; 
     display: flex; 
     justify-content: center;
     align-items: center; 
     text-align: center; 
-    background: var(--color-blanco); /* Fondo del hero */
-    padding: 40px 20px;
-    margin-top: 20px;
-    border-radius: 10px; 
-    max-width: 800px; 
-    margin-left: auto; /* navegador asigna la misma cantidad de espacio libre disponible a ambos lados */
-    margin-right: auto;
+    background: var(--color-blanco);
+    padding: 60px 20px;
+    margin: 30px auto;
+    border-radius: 20px; 
+    max-width: 900px; 
+    box-shadow: var(--sombra);
 }
 
-.hero-content {
-    max-width: 600px; 
+.destaque {
+    color: var(--color-bisa-claro);
 }
 
 .bienvenida {
-    font-size: 1.2rem;    /* que significa Root Em, rem es una unidad de longitud relativa en CSS
-    establece el tamaño de la fuente de un elemento a 1.2 veces el tamaño de la fuente raíz (root) del documento. */
+    font-size: 1rem;
     color: var(--color-bisa-claro);
     font-weight: 600;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-content h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 3rem;
     color: var(--color-bisa);
-    margin-bottom: 20px;
-    line-height: 1.1;
+    margin: 15px 0;
 }
 
-.subtitulo {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 30px;
+.cta-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap; 
 }
 
-.inicio{
-    display: inline-block;     /* permite poner elementos uno al lado del otro (inline), 
-    pero con la capacidad de definir su tamaño y margen vertical (block) */
-    background-color: var(--color-rojo-btn); 
-    color: var(--color-blanco);
-    text-decoration: none; /* Quitar el subrayado por defecto */
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.1rem;
+.inicio, .Registrarse {
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px; 
     font-weight: 600;
-    letter-spacing: 1px;  /* espacio adicional que se agrega entre cada carácter (letra, número o símbolo) dentro del texto de un elemento. */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Aplica la transición a la propiedad del color de fondo,
-     Aplica la transición a la propiedad transform (usada para mover, escalar o rotar elementos) */  
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.Registrarse{
-     display: inline-block;     
-    background-color: var(--color-rojo-btn); 
-    color: var(--color-blanco);
-    text-decoration: none; /* Quitar el subrayado por defecto */
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px; /* EXPLICAXION */  /* Animación suave para el hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* EXPLICAXION */  /* Sombra para que parezca un botón real */
+.inicio { background-color: var(--color-rojo-btn); color: white; }
+.Registrarse { background-color: var(--color-bisa); color: white; }
 
+.inicio:hover, .Registrarse:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
 }
 
-.inicio:hover {
-    background-color: #A9001C; /* Un rojo un poco más oscuro */
-    /* Ligero movimiento para feedback visual */
-    transform: translateY(-2px); /* EXPLICAXION */
+.features {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 20px;
+    text-align: center;
 }
-.Registrarse:hover{
-     background-color: #A9001C; /* Un rojo un poco más oscuro */ 
-    /* Ligero movimiento para feedback visual */
-    transform: translateY(-2px); /* EXPLICAXION */
 
+.feature-item i {
+    font-size: 2rem;
+    color: var(--color-bisa-claro);
+    margin-bottom: 10px;
 }
+
+.feature-item h3 { color: var(--color-bisa); font-size: 1.1rem; }
+.feature-item p { font-size: 0.9rem; color: #777; }
 
 @media (max-width: 600px) {
-    .hero-content h2 {
-        font-size: 2rem; /* Reduce el tamaño del título en móviles */
-    }
-
-    .inicio {
-        width: 90%; /* Hace que el botón ocupe casi todo el ancho */
-        padding: 12px 20px;
-    }
-
-    .hero-section {
-        margin: 10px;
-    }
+    .features { flex-direction: column; }
+    .hero-content h2 { font-size: 2rem; }
+    .inicio, .Registrarse { width: 100%; }
 }
