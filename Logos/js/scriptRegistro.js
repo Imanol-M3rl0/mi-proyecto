@@ -36,52 +36,42 @@ Si la clase open SÍ está presente, la elimina (cerrando la barra) */
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('login-form'); 
-    const emailInput = document.getElementById('email'); 
-    const passwordInput = document.getElementById('contrasena');
-    const mensajeLogin = document.getElementById('mensaje-login');
+    const form = document.getElementById('registro-form'); 
+    const mensajeRegistro = document.getElementById('mensaje-registro');
 
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault(); 
-            iniciarSesion();
+            
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contrasenaValor = document.getElementById('Contraseña').value.trim(); 
+            
+            if (!nombre || !email || !contrasenaValor) {
+                mostrarMensaje("Debe llenar todos los campos obligatorios.", 'error');
+                return;
+            }
+
+            const nuevoUsuario = {
+                nombre: nombre,
+                email: email,
+                contrasena: contrasenaValor, 
+            };
+
+            localStorage.setItem('usuarioBisa', JSON.stringify(nuevoUsuario));
+
+            mostrarMensaje("¡Registro exitoso! Redirigiendo a Iniciar Sesión...", 'success');
+            
+            setTimeout(() => {
+                window.location.href = "BancoBisaInicio.html";
+            }, 1500); 
         });
     }
 
-    function iniciarSesion() {
-        const usuarioGuardadoStr = localStorage.getItem('usuarioBisa');
-        
-        if (!usuarioGuardadoStr) {
-            mostrarMensaje("No existe ninguna cuenta. ¡Regístrate primero!", 'error');
-            return;
-        }
-
-        const usuarioGuardado = JSON.parse(usuarioGuardadoStr);
-        const emailIngresado = emailInput.value.trim();
-        const contrasenaIngresada = passwordInput.value.trim();
-        
-        if (!emailIngresado || !contrasenaIngresada) {
-            mostrarMensaje("Debe llenar todos los campos obligatorios.", 'error');
-            return;
-        }
-
-        if (usuarioGuardado.email === emailIngresado && usuarioGuardado.contrasena === contrasenaIngresada) {
-            localStorage.setItem('sesionActiva', 'true');
-            mostrarMensaje(`¡Bienvenido/a, ${usuarioGuardado.nombre || 'Usuario'}! Acceso concedido.`, 'success');
-            
-            setTimeout(() => {
-             window.location.href = "mis-cuentas.html";
-            }, 1000);
-
-        } else {
-            mostrarMensaje("Correo o contraseña incorrectos :(", 'error');
-        }
-    }
-    
     function mostrarMensaje(texto, tipo) {
-        if (mensajeLogin) {
-            mensajeLogin.textContent = texto;
-            mensajeLogin.className = `mensaje-login ${tipo}`;
+        if (mensajeRegistro) {
+            mensajeRegistro.textContent = texto;
+            mensajeRegistro.className = `mensaje-registro ${tipo}`;
         }
     }
 });

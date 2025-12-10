@@ -3,6 +3,8 @@
     --color-secundario: #ffd200;
     --color-texto-claro: white;
     --color-fondo-panel: rgba(255, 255, 255, 0.95);
+    --color-texto-oscuro: #333;
+
 }
 
 body {
@@ -42,12 +44,19 @@ header {
 }
 
 header img {
-     height: 75px; 
+    height: 75px; 
 }
-/* Desktop Nav */
-.nav-desktop ul { list-style: none; display: flex; gap: 15px; }
-.nav-desktop ul li a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9em; }
-/* REUTILIZANDO SIDEBAR DEL ANTERIOR */
+.nav-desktop ul {
+    list-style:none; 
+    display: flex; 
+    gap: 15px; 
+}
+.nav-desktop ul li a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9em; 
+}
 .sidebar {
     position: fixed;
     top: 0;
@@ -61,9 +70,14 @@ header img {
     transition: transform 0.3s ease;
 }
 
-.sidebar.open { transform: translateX(0); }
+.sidebar.open { 
+    transform: translateX(0); 
+}
 
-.sidebar nav ul { list-style: none; padding: 0; }
+.sidebar nav ul { 
+    list-style: none; 
+    padding: 0; 
+}
 .sidebar nav ul li a {
     color: white;
     text-decoration: none;
@@ -77,7 +91,6 @@ header img {
     border-left-color: var(--color-secundario);
 }
 
-/* CONTENIDO PRINCIPAL */
 #mis-cuentas h1 {
     color: var(--color-texto-claro); 
     text-align: center;
@@ -129,7 +142,6 @@ header img {
     border-radius: 5px;
 }
 
-/* PANEL DE OPERACIONES */
 .panel-deposito-retiro {
     display: flex;
     gap: 10px;
@@ -146,11 +158,25 @@ header img {
     transition: 0.3s;
 }
 
-.deposito { background: #e8f5e9; color: #2e7d32; }
-.retiro { background: #ffebee; color: #c62828; }
+.deposito { 
+    background: #e8f5e9; 
+    color: #2e7d32; 
+}
 
-.deposito:hover { background: #2e7d32; color: white; }
-.retiro:hover { background: #c62828; color: white; }
+.retiro { 
+    background: #ffebee; 
+    color: #c62828; 
+}
+
+.deposito:hover { 
+    background: #2e7d32; 
+    color: white; 
+}
+
+.retiro:hover { 
+    background: #c62828; 
+    color: white; 
+}
 
 #monto-operacion {
     width: 100%;
@@ -160,14 +186,43 @@ header img {
     border-radius: 8px;
 }
 
-#boton-agregar { background-color: var(--color-principal); color: white; }
-#boton-borrar { background-color: #d32f2f; color: white; }
+#boton-agregar {
+    background-color: var(--color-principal); 
+    color: var(--color-texto-claro);  
+}
+#boton-borrar { 
+    background-color: var(--color-secundario);
+    color: var(--color-texto-oscuro);
+}
 
 .menu-toggle {
-    display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;
+    display: none;
+    background: none; 
+    border: none; 
+    color: white; 
+    font-size: 1.5rem; 
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
     .nav-desktop { display: none; }
+}
+
+.link-trans {
+    display: inline-block; /* Permite aplicar padding y ancho */
+    padding: 5px 15px;
+    border-radius: 5px; 
+    text-decoration: none; 
+    margin: 7px;  
+    background-color: var(--color-principal);
+    color:  var(--color-texto-claro);
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.link-trans:hover {
+    background-color: #003670; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }

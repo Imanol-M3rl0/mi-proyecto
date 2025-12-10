@@ -1,11 +1,11 @@
 .salida{
   height: 800px;
-    width: 800px;
+  width: 1200px;
    
 
 }
 body{
-    text-align: center;
-    align-items: center;
-background-color: black;
+  text-align: center;
+  align-items: center;
+  background-color: black;
 }

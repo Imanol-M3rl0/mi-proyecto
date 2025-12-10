@@ -30,19 +30,19 @@
             <div class="registro-container">
                 <h1><i class="fas fa-user-check"></i> Únete a Banco BISA</h1>
                 <aside class="sidebar" id="sidebar">
-              <nav>
-                 <ul>
-                    <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
-                    <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
-                    <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
-                    <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
-                    <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
-                 </ul>
-              </nav>
-            </aside>
+                <nav>
+                    <ul>
+                        <li><a href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                        <li><a href="mis-cuentas.html"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                        <li><a href="transacciones.html"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
+                        <li><a href="sucursales.html"><i class="fas fa-map-marked-alt"></i> Sucursales</a></li>
+                        <li><a href="salir.html"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                    </ul>
+                </nav>
+                </aside>
                 <p class="sub-registro">Completa tus datos para empezar tu experiencia digital</p>
                 
-                <form action="BancoBisaInicio.html" method="POST">
+                <form id="registro-form" method="POST"> 
                     <div class="form-group">
                         <label for="nombre"><i class="fas fa-id-card"></i> Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
@@ -76,11 +76,14 @@
                     
                     
                     
-                    <button type="submit" class="btn-registro">CREAR CUENTA AHORA</button>
+                    <div class="mensaje-registro" id="mensaje-registro"></div>
+
+                    <button type="submit" class="btn-registro" id="btn-registrar">CREAR CUENTA AHORA</button>
                 </form>
             </div>
         </section>
     </main>
-    <script src="js/scriptInicio.js"></script>
+    <script src="js/scriptRegistro.js"></script>
+
 </body>
 </html>

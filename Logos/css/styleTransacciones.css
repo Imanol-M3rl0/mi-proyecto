@@ -46,12 +46,19 @@ header {
 }
 
 header img {
-     height: 75px; 
+    height: 75px; 
 }
-/* Desktop Nav */
-.nav-desktop ul { list-style: none; display: flex; gap: 15px; }
-.nav-desktop ul li a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9em; }
-/* REUTILIZANDO SIDEBAR DEL ANTERIOR */
+.nav-desktop ul {
+    list-style: none; 
+    display: flex; 
+    gap: 15px; 
+}
+.nav-desktop ul li a { 
+    color: white; 
+    text-decoration: none;
+    font-weight: 500; 
+    font-size: 0.9em;
+ }
 .sidebar {
     position: fixed;
     top: 0;
@@ -65,9 +72,14 @@ header img {
     transition: transform 0.3s ease;
 }
 
-.sidebar.open { transform: translateX(0); }
+.sidebar.open {
+    transform: translateX(0);
+ }
 
-.sidebar nav ul { list-style: none; padding: 0; }
+.sidebar nav ul { 
+    list-style: none;
+    padding: 0; 
+}
 .sidebar nav ul li a {
     color: white;
     text-decoration: none;
@@ -97,7 +109,6 @@ header img {
     min-height: 400px;
 }
 
-/* Estilo para cada fila */
 .transaction-item {
     display: flex;
     justify-content: space-between;
@@ -108,8 +119,12 @@ header img {
     border-radius: 5px;
 }
 
-.transaction-item.deposito { border-left: 5px solid var(--verde-bisa); }
-.transaction-item.retiro { border-left: 5px solid var(--rojo-bisa); }
+.transaction-item.deposito { 
+    border-left: 5px solid var(--verde-bisa); 
+}
+.transaction-item.retiro { 
+    border-left: 5px solid var(--rojo-bisa); 
+}
 
 .transaction-type {
     font-weight: 700;
@@ -117,8 +132,12 @@ header img {
     font-size: 0.9em;
 }
 
-.deposito .transaction-amount { color: var(--verde-bisa); }
-.retiro .transaction-amount { color: var(--rojo-bisa); }
+.deposito .transaction-amount { 
+    color: var(--verde-bisa); 
+}
+.retiro .transaction-amount { 
+    color: var(--rojo-bisa); 
+}
 
 .transaction-amount {
     font-weight: 800;
@@ -139,7 +158,10 @@ header img {
     font-size: 0.9em;
 }
 
-footer { margin: 40px 0; text-align: center; }
+footer {
+    margin: 40px 0; 
+    text-align: center;
+}
 footer a {
     text-decoration: none;
     color: var(--color-texto-oscuro);
@@ -149,8 +171,9 @@ footer a {
     font-weight: bold;
     transition: 0.3s;
 }
-footer a:hover { transform: scale(1.05); }
-/* Oculto por defecto en PC */
+footer a:hover {
+    transform: scale(1.05);
+ }
 #menu-toggle {
     display: none;
     background: none;
@@ -160,12 +183,7 @@ footer a:hover { transform: scale(1.05); }
     cursor: pointer;
 }
 
-/* Visible solo en móviles */
 @media (max-width: 768px) {
-    #menu-toggle {
-        display: block;
-    }
-    .nav-desktop {
-        display: none;
-    }
+    #menu-toggle {display: block;}
+    .nav-desktop {display: none;}
 }

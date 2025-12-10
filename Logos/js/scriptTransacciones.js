@@ -17,7 +17,7 @@ function mostrarHistorial(contenedor) {
         return;
     }
 
-    contenedor.innerHTML = ''; // Limpia el cargando/contenido previo
+    contenedor.innerHTML = ''; 
 
     [...historialTransacciones].reverse().forEach(t => { 
         const item = document.createElement('div');

@@ -48,14 +48,21 @@ header {
 }
 
 header img {
-     height: 75px; 
+    height: 75px; 
 }
 
-/* Desktop Nav */
-.nav-desktop ul { list-style: none; display: flex; gap: 15px; }
-.nav-desktop ul li a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9em; }
+.nav-desktop ul {
+    list-style: none; 
+    display: flex; 
+    gap: 15px;
+}
+.nav-desktop ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9em; 
+}
 
-/* SIDEBAR ARREGLADO */
 .sidebar {
     position: fixed;
     top: 0;
@@ -70,9 +77,14 @@ header img {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar.open { transform: translateX(0); }
+.sidebar.open { 
+    transform: translateX(0); 
+}
 
-.sidebar nav ul { list-style: none; }
+.sidebar nav ul { 
+    list-style: none; 
+}
+
 .sidebar nav ul li a {
     color: white;
     text-decoration: none;
@@ -116,7 +128,6 @@ h1 {
     font-size: 0.9rem;
 }
 
-/* Diseño del Formulario */
 .form-group {
     margin-bottom: 15px;
 }
@@ -167,7 +178,7 @@ input:focus {
 }
 
 .btn-registro:hover {
-    background-color: #f0c600;
+    background-color: var(--color-secundario);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -181,12 +192,27 @@ input:focus {
     cursor: pointer;
 }
 
-/* Visible solo en móviles */
+.mensaje-registro {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.mensaje-registro.error {
+    background-color: #ffe5e5; 
+    color: #dc3545; 
+    border: 1px solid #dc3545;
+}
+
+.mensaje-registro.success {
+    background-color: #e6ffed;
+    color: #28a745; 
+    border: 1px solid #28a745;
+}
+
 @media (max-width: 768px) {
-    #menu-toggle {
-        display: block;
-    }
-    .nav-desktop {
-        display: none;
-    }
+    #menu-toggle { display: block;}
+    .nav-desktop {display: none;}
 }

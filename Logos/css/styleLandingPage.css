@@ -5,7 +5,7 @@
     --color-gris-claro: #F5F5F5;
     --color-rojo-btn: #E3001C;
     --fuente-principal: 'Poppins', sans-serif;
-    --sombra: 0 4px 15px rgba(0,0,0,0.1); /* Agregué una sombrita suave */
+    --sombra: 0 4px 15px rgba(0,0,0,0.1); 
 }
 
 * { 
@@ -45,7 +45,7 @@ header {
 }
 
 header img {
-     height: 75px; 
+    height: 75px; 
 }
 
 .hero-section {
@@ -96,8 +96,14 @@ header img {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.inicio { background-color: var(--color-rojo-btn); color: white; }
-.Registrarse { background-color: var(--color-bisa); color: white; }
+.inicio { 
+    background-color: var(--color-rojo-btn);
+    color: white; 
+}
+.Registrarse { 
+    background-color: var(--color-bisa);
+    color: white;
+ }
 
 .inicio:hover, .Registrarse:hover {
     transform: translateY(-3px);
@@ -119,8 +125,14 @@ header img {
     margin-bottom: 10px;
 }
 
-.feature-item h3 { color: var(--color-bisa); font-size: 1.1rem; }
-.feature-item p { font-size: 0.9rem; color: #777; }
+.feature-item h3 { 
+    color: var(--color-bisa); 
+    font-size: 1.1rem;
+}
+.feature-item p {
+     font-size: 0.9rem; 
+     color: #777;
+}
 
 @media (max-width: 600px) {
     .features { flex-direction: column; }

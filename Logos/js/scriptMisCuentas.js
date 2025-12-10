@@ -2,12 +2,11 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('open');
 });
 
-// NUEVO: Recuperamos o inicializamos el historial persistente
 let historialTransacciones = JSON.parse(localStorage.getItem('transacciones')) || [];
 
 let cuentas = [
-    { id: 1, nombre: "Cuenta Ahorro BISA", saldo: 1500.50 },
-    { id: 2, nombre: "Cuenta Corriente", saldo: 300.00 }
+    { id: 1, nombre: "Cuenta Ahorro BISA", saldo: 0.00 },
+    { id: 2, nombre: "Cuenta Corriente", saldo: 0.00 }
 ];
 
 let proximoId = 3; 
@@ -71,7 +70,6 @@ function realizarOperacion(tipo) {
         }
     }
 
-    // --- NUEVO: ANOTAR EN EL LOCALSTORAGE ---
     const transaccion = {
         tipo: tipo,
         monto: monto,
@@ -82,7 +80,6 @@ function realizarOperacion(tipo) {
     };
     historialTransacciones.push(transaccion);
     localStorage.setItem('transacciones', JSON.stringify(historialTransacciones));
-    // ----------------------------------------
     
     cuentaSeleccionada = cuentas[indice]; 
     montoOperacionInput.value = '';
